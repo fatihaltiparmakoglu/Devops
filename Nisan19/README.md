@@ -202,13 +202,9 @@ Writing superblocks and filesystem accounting information: done
 [fatih.altiparmakoglu@test ~]$
 ```
 
-```
-[fatih.altiparmakoglu@test ~]$ sudo mkdir /bootcamp
-```
+``[fatih.altiparmakoglu@test ~]$ sudo mkdir /bootcamp``
 
-```
-[fatih.altiparmakoglu@test ~]$ sudo mount /dev/sdb1 /bootcamp
-```
+``[fatih.altiparmakoglu@test ~]$ sudo mount /dev/sdb1 /bootcamp``
 
 Mount edilen disk aşağıdaki "df -h" çıktısında /bootcamp dizinine mount edildiği görülür.
 
