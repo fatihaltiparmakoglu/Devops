@@ -1,8 +1,8 @@
 # CASE
 
-# CASE-1
+## CASE-1
 
-# 1.1
+## 1.1
 
 Üzerinde centos işletim sistem olan bir sanal makine kurulduktan sonra paketleri güncellemek için aşağıdaki komut çalıştırılır.
 
@@ -12,7 +12,7 @@ Güncellenen paketlerin içerisinde herhangi bir kernel güncellemesi varsa aşa
 
 ``[root@test ~]# reboot``
 
-# 1.2
+## 1.2
 
 Aşağıdaki komut ile kullanıcı oluşturulur.
 
@@ -30,7 +30,7 @@ Bu adımlar tamamlandıktan sonra aşağıdaki komut ile oluşturduğumuz kullan
 
 ``[root@test ~]# su - fatih.altiparmakoglu``
 
-# 1.3
+## 1.3
 
 Aşağıdaki komut ile mevcut algılanmış disk partitionları görülür.
 
@@ -222,7 +222,7 @@ tmpfs                    783M     0  783M   0% /run/user/0
 [fatih.altiparmakoglu@test ~]$
 ```
 
-# 1.4
+## 1.4
 
 Aşağıdaki komut ile /opt/bootcamp dizini oluşturulur.
 
@@ -232,7 +232,7 @@ Dizin oluşturulduktan sonra aşağıdaki komut ile /opt/bootcamp/bootcamp.txt d
 
 ``[fatih.altiparmakoglu@test ~]$ sudo echo "merhaba trendyol" | sudo tee /opt/bootcamp/bootcamp.txt``
 
-# 1.5
+## 1.5
 
 Aşağıdaki komut ile /opt/bootcamp/bootcamp.txt dosyası /bootcamp diskine taşınmış olur.
 
