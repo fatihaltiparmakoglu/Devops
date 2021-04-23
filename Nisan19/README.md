@@ -173,9 +173,58 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 
 ```
 
+Ardından aşağıdaki komutlar ile oluşturduğumuz partition biçimlendirip, /bootcamp dizini oluşturup, bu oluşturulan dizine mount edilir.
 
+```
+[fatih.altiparmakoglu@test ~]$ sudo mkfs.ext4 /dev/sdb1
+mke2fs 1.42.9 (28-Dec-2013)
+Discarding device blocks: done
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+655360 inodes, 2621184 blocks
+131059 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=2151677952
+80 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
 
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
 
+[fatih.altiparmakoglu@test ~]$
+```
+
+```
+[fatih.altiparmakoglu@test ~]$ sudo mkdir /bootcamp
+```
+
+```
+[fatih.altiparmakoglu@test ~]$ sudo mount /dev/sdb1 /bootcamp
+```
+
+Mount edilen disk aşağıdaki "df -h" çıktısında /bootcamp dizinine mount edildiği görülür.
+
+```
+[fatih.altiparmakoglu@test ~]$ df -h
+Filesystem               Size  Used Avail Use% Mounted on
+devtmpfs                 3.9G     0  3.9G   0% /dev
+tmpfs                    3.9G     0  3.9G   0% /dev/shm
+tmpfs                    3.9G  8.8M  3.9G   1% /run
+tmpfs                    3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/mapper/centos-root   35G  1.5G   34G   5% /	
+/dev/sda1               1014M  193M  822M  19% /boot
+tmpfs                    783M     0  783M   0% /run/user/0
+/dev/sdb1                9.8G   37M  9.2G   1% /bootcamp
+[fatih.altiparmakoglu@test ~]$
+```
 
 
 
