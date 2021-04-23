@@ -1,6 +1,6 @@
 CASE
 
-CASE1
+CASE-1
 
 1.1
 
@@ -226,41 +226,17 @@ tmpfs                    783M     0  783M   0% /run/user/0
 
 Aşağıdaki komut ile /opt/bootcamp dizini oluşturulur.
 
-```
-[fatih.altiparmakoglu@test ~]$ sudo mkdir /opt/bootcamp
-```
+``[fatih.altiparmakoglu@test ~]$ sudo mkdir /opt/bootcamp``
 
 Dizin oluşturulduktan sonra aşağıdaki komut ile /opt/bootcamp/bootcamp.txt dosyasının içine "merhaba trendyol" yazılmış olur.
 
-```
-[fatih.altiparmakoglu@test ~]$ sudo echo "merhaba trendyol" | sudo tee /opt/bootcamp/bootcamp.txt
-```
+``[fatih.altiparmakoglu@test ~]$ sudo echo "merhaba trendyol" | sudo tee /opt/bootcamp/bootcamp.txt``
 
 1.5
 
 Aşağıdaki komut ile /opt/bootcamp/bootcamp.txt dosyası /bootcamp diskine taşınmış olur.
 
-```
-[fatih.altiparmakoglu@test ~]$ sudo find / -name "bootcamp.txt" -exec mv {} /bootcamp/ \;
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+``[fatih.altiparmakoglu@test ~]$ sudo find / -name "bootcamp.txt" -exec mv {} /bootcamp/ \;``
 
 
 
