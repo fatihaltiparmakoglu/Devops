@@ -31,3 +31,37 @@ Bu adımlar tamamlandıktan sonra aşağıdaki komut ile oluşturduğumuz kullan
 ``[root@test ~]# su - fatih.altiparmakoglu``
 
 1.3
+
+Aşağıdaki komut ile mevcut algılanmış disk partitionlarımızı görürüz.
+
+``[fatih.altiparmakoglu@test ~]$ sudo fdisk -l``
+
+`[fatih.altiparmakoglu@test ~]$ sudo fdisk -l
+
+Disk /dev/sda: 42.9 GB, 42949672960 bytes, 83886080 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x0009bec9
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200    83886079    40893440   8e  Linux LVM
+
+Disk /dev/mapper/centos-root: 37.6 GB, 37576769536 bytes, 73392128 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/centos-swap: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+[fatih.altiparmakoglu@test ~]$`
+
+
+
+
