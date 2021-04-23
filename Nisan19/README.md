@@ -36,7 +36,8 @@ Aşağıdaki komut ile mevcut algılanmış disk partitionlarımızı görürüz
 
 ``[fatih.altiparmakoglu@test ~]$ sudo fdisk -l``
 
-```[fatih.altiparmakoglu@test ~]$ sudo fdisk -l
+```
+[fatih.altiparmakoglu@test ~]$ sudo fdisk -l
 
 Disk /dev/sda: 42.9 GB, 42949672960 bytes, 83886080 sectors
 Units = sectors of 1 * 512 = 512 bytes
@@ -60,7 +61,8 @@ Units = sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 
-[fatih.altiparmakoglu@test ~]$```
+[fatih.altiparmakoglu@test ~]$
+```
 
 
 
