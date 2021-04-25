@@ -238,5 +238,67 @@ Aşağıdaki komut ile /opt/bootcamp/bootcamp.txt dosyası /bootcamp diskine ta�
 
 ``[fatih.altiparmakoglu@test ~]$ sudo find / -name "bootcamp.txt" -exec mv {} /bootcamp/ \;``
 
+## CASE-1
 
+Aşağıdaki komut çalıştırılarak "case.yml" playbookundaki "docker", "wordpress-docker" rolelerinde bulunan tasklar çalıştırılır. Bu rolelerdeki "docker" docker ve docker-compose kurulumu gerçekleştirir. "wordpress-docker" ise docker üzerinde wordpress, mysql ve nginx dockerized eder.
+
+http://"host_ip" sayfasında wordpress, http://"host_ip"/devops sayfasında "HosgeldinDevops" sayfası açılır.
+
+``[root@control ansible]# ansible-playbook case.yml --ask-pass``
+
+```
+[root@control ansible]# ansible-playbook case.yml --ask-pass
+SSH password:
+
+PLAY [install docker and wp] *******************************************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************************************************
+ok: ["host_ip"]
+
+TASK [docker : install yum utils] **************************************************************************************************************************************
+ok: ["host_ip"]
+
+TASK [add docker repository] *******************************************************************************************************************************************
+changed: ["host_ip"]
+
+TASK [install docker] **************************************************************************************************************************************************
+changed: ["host_ip"]
+
+TASK [install docker compose] ******************************************************************************************************************************************
+changed: ["host_ip"]
+
+TASK [start and enable docker service] *********************************************************************************************************************************
+changed: ["host_ip"]
+
+TASK [wordpress-docker : setup compose dir structure] ******************************************************************************************************************
+changed: ["host_ip"] => (item=wordpress)
+changed: ["host_ip"] => (item=wp-db-data)
+changed: ["host_ip"] => (item=nginx)
+changed: ["host_ip"] => (item=logs/nginx)
+
+TASK [wordpress-docker : create docker-compose.yml file] ***************************************************************************************************************
+changed: ["host_ip"]
+
+TASK [wordpress-docker : deploy Docker Compose project for (Wordpress/MariaDB/Nginx containers)] ***********************************************************************
+changed: ["host_ip"]
+
+TASK [wordpress-docker : deploy WordPress Nginx virtual host] **********************************************************************************************************
+changed: ["host_ip"]
+
+TASK [wordpress-docker : copy index.html] ******************************************************************************************************************************
+changed: ["host_ip"]
+
+TASK [wordpress-docker : Run docker-compose up] ************************************************************************************************************************
+changed: ["host_ip"]
+
+TASK [wordpress-docker : giving some time for project (all 3 containers) to start-up] **********************************************************************************
+Pausing for 10 seconds
+(ctrl+C then 'C' = continue early, ctrl+C then 'A' = abort)
+ok: ["host_ip"]
+
+PLAY RECAP *************************************************************************************************************************************************************
+"host_ip"               : ok=13   changed=10   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@control ansible]# vim roles/wordpress-docker/tasks/main.yml
+```
 
