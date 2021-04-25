@@ -238,7 +238,7 @@ Aşağıdaki komut ile /opt/bootcamp/bootcamp.txt dosyası /bootcamp diskine ta�
 
 ``[fatih.altiparmakoglu@test ~]$ sudo find / -name "bootcamp.txt" -exec mv {} /bootcamp/ \;``
 
-## CASE-1
+## CASE-2
 
 Aşağıdaki komut çalıştırılarak "case.yml" playbookundaki "docker", "wordpress-docker" rolelerinde bulunan tasklar çalıştırılır. Bu rolelerdeki "docker" docker ve docker-compose kurulumu gerçekleştirir. "wordpress-docker" ise docker üzerinde wordpress, mysql ve nginx dockerized eder.
 
