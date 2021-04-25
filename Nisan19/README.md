@@ -299,6 +299,5 @@ ok: ["host_ip"]
 PLAY RECAP *************************************************************************************************************************************************************
 "host_ip"               : ok=13   changed=10   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
-[root@control ansible]# vim roles/wordpress-docker/tasks/main.yml
+[root@control ansible]#
 ```
-
