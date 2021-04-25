@@ -1,0 +1,12 @@
+---
+- name: install docker and wp
+  hosts: docker
+  gather_facts: yes
+  remote_user: root
+
+  vars_files:
+    - defaults/main.yml
+
+  roles:
+    - docker
+    - wordpress-docker
