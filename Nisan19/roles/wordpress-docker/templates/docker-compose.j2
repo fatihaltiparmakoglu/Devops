@@ -1,0 +1,51 @@
+version: '3.6'
+services:
+
+  wordpress:
+    image: wordpress:{{ wp_version }}-php7.0-fpm
+    ports:
+      - '9000:9000'
+    container_name: wordpress
+    volumes:
+      - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./wordpress:/var/www/html
+    environment:
+      - WORDPRESS_DB_NAME={{ wp_db_name }}
+      - WORDPRESS_TABLE_PREFIX={{ wp_db_tb_pre }}
+      - WORDPRESS_DB_HOST={{ wp_db_host }}
+      - WORDPRESS_DB_PASSWORD={{ wp_db_psw }}
+    depends_on:
+      - mysql
+    restart: always
+
+  mysql:
+    image: mariadb
+    ports:
+      - '3306:3306'
+    container_name: mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD={{ wp_db_psw }}
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - '80:80'
+    volumes:
+        - ./nginx:/etc/nginx/conf.d
+        - ./logs/nginx:/var/log/nginx
+        - ./wordpress:/var/www/html
+    depends_on:
+      - wordpress
+    restart: always
+
+  adminer:
+    image: adminer
+    restart: always
+    links:
+      - mysql
+    ports:
+      - 8080:8080
