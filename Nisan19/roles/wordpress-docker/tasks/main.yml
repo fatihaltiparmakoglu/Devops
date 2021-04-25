@@ -55,7 +55,7 @@
     - index
 
 - name: run docker-compose up
-  command: docker-compose -f docker-compose.yml up -d
+  command: docker-compose up -d
   args:
     chdir: "{{ compose_project_dir }}"
   tags:
